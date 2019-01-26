@@ -27,7 +27,14 @@ cameraTrigger.onclick = function() {
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
+    this.convertToText(cameraOutput);
 };
+
+//Reading Text using OCRAD
+function convertToText(img) {
+    var string = OCRAD(img);
+    alert(string);
+}
 
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
