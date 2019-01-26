@@ -27,16 +27,16 @@ cameraTrigger.onclick = function() {
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
-    scanImage();
+    scanImage(cameraOutput);
 };
 
 //Reading Text using OCRAD
-function scanImage() {
-    var myImage= document.getElementById('camera--output');
-       Tesseract.recognize(myImage).then(function(result){
-        console.log(result.text);
-        alert(result.text);
-        });
+function scanImage(img) {
+    //var myImage= document.getElementById('camera--output');
+   Tesseract.recognize(img).then(function(result){
+    console.log(result.text);
+    alert(result.text);
+    });
 };
 
 // Start the video stream when the window loads
