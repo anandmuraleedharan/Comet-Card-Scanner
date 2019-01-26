@@ -5,8 +5,7 @@ var constraints = { video: { facingMode: "environment" }, audio: false };
 const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
     cameraSensor = document.querySelector("#camera--sensor"),
-    cameraTrigger = document.querySelector("#camera--trigger"),
-    scanTrigger = document.querySelector("#scan--trigger")
+    cameraTrigger = document.querySelector("#camera--trigger");
     
 // Access the device camera and stream to cameraView
 function cameraStart() {
@@ -28,10 +27,11 @@ cameraTrigger.onclick = function() {
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
+    scanImage();
 };
 
 //Reading Text using OCRAD
-scanTrigger.onclick = function() {
+function scanImage() {
     var myImage= document.getElementById('camera--output');
        Tesseract.recognize(myImage).then(function(result){
         console.log(result.text);
