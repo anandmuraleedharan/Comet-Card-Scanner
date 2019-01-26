@@ -32,7 +32,7 @@ cameraTrigger.onclick = function() {
 
 //Reading Text using OCRAD
 function convertToText(img) {
-    var string = OCRAD(img);
+    var string = OCRAD(imageData);
     alert(string);
 }
 
