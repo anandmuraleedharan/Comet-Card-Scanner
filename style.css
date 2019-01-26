@@ -22,9 +22,9 @@ html, body{
     border-radius: 30px;
     border: none;
     padding: 15px 20px;
-    text-align: left;
+    text-align: center;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-    position: fixed;
+    position: relative;
     bottom: 30px;
     left: calc(50% - 100px);
 }
@@ -36,9 +36,9 @@ html, body{
     border-radius: 30px;
     border: none;
     padding: 15px 20px;
-    text-align: right;
+    text-align: center;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-    position: fixed;
+    position: relative;
     bottom: 30px;
     left: calc(50% - 100px);
 }
