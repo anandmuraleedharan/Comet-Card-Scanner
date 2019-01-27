@@ -1,5 +1,5 @@
 // Set constraints for the video stream
-var constraints = { video: { facingMode: "environment" }, audio: false };
+var constraints = { video: { facingMode: { exact: "environment" } }, audio: false };
 
 // Define constants
 const cameraView = document.querySelector("#camera--view"),
@@ -30,7 +30,7 @@ cameraTrigger.onclick = function() {
     scanImage(cameraOutput.src);
 };
 
-//Reading Text using OCRAD
+//Reading Text using Tesseract
 function scanImage(img) {
     //var myImage= document.getElementById('camera--output');
    Tesseract.recognize(img).then(function(result){
